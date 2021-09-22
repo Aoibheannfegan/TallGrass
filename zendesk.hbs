@@ -2,10 +2,18 @@
 
 
 <script> 
- let redirect = document.querySelector('#redirect');
-        document.querySelector('#knowledge_center').onclick = function() {
-            alert('hello');
-        };
+    function redirect()
+    {
+        let name = document.querySelector('#Botanica').value;
+        alert('hello, ' + name);
+    }
+
+    function listen() {
+        document.querySelector('#redirect').addEventListener('click', redirect);
+    }
+
+    document.addEventListener('DOMContentLoaded', listen);
+  
 </script>
   
 <header class="header">
@@ -21,7 +29,7 @@
 	<div id="redirect">
       <label id="knowledge_center">Knowledge Center</label>
       <select>
-            <option value ="botanica">Botanica</option>
+            <option id ="Botanica">Botanica</option>
             <option>Megafood</option>
       </select>
   </div>
@@ -62,3 +70,4 @@
     {{/if}}
   </div>
 </header>
+
